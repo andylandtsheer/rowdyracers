@@ -11,11 +11,11 @@ import java.awt.*;
  */
 public class GameFrame extends JFrame {
 
-    static final int WINDOW_WIDTH = 1200;
-    static final int WINDOW_HEIGHT = 750;
-    static final int CONTROL_PANEL_WIDTH = 300;
-    static final int CANVAS_PANEL_WIDTH = WINDOW_WIDTH - CONTROL_PANEL_WIDTH;
-
+    public static final int WINDOW_WIDTH = 1050;
+    public static final int WINDOW_HEIGHT = 750;
+    public static final int CONTROL_PANEL_WIDTH = 300;
+    public static final int CANVAS_PANEL_WIDTH = WINDOW_WIDTH - CONTROL_PANEL_WIDTH - 15;
+    public static final int CANVAS_PANEL_HEIGHT = WINDOW_WIDTH - CONTROL_PANEL_WIDTH - 40;
 
     private final JPanel gamePanel;
     private final JPanel controlPanel;
@@ -29,10 +29,11 @@ public class GameFrame extends JFrame {
 
     public void launch() {
         this.add(controlPanel, BorderLayout.WEST);
-        controlPanel.setPreferredSize(new Dimension(CONTROL_PANEL_WIDTH, WINDOW_HEIGHT));
         this.add(gamePanel, BorderLayout.EAST);
+        controlPanel.setPreferredSize(new Dimension(CONTROL_PANEL_WIDTH, WINDOW_HEIGHT));
         gamePanel.setPreferredSize(new Dimension(CANVAS_PANEL_WIDTH, WINDOW_HEIGHT));
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        this.setBackground(Color.darkGray);
         this.setVisible(true);
     }
 
