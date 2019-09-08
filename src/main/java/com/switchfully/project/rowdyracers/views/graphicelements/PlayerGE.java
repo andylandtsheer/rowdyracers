@@ -1,6 +1,8 @@
 package com.switchfully.project.rowdyracers.views.graphicelements;
 
+import com.switchfully.project.rowdyracers.domain.GridPosition;
 import com.switchfully.project.rowdyracers.domain.Player;
+import com.switchfully.project.rowdyracers.views.SquarePositionHelper;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -22,8 +24,8 @@ public class PlayerGE extends GraphicElement {
         try {
             g.drawImage(
                     createImage(),
-                    player.getCoordinates().getX(),
-                    player.getCoordinates().getY(),
+                    SquarePositionHelper.fromColumnToXCoordinate(player.getGridPosition().getColumn()),
+                    SquarePositionHelper.fromRowToYCoordinate(player.getGridPosition().getRow()),
                     null);
         } catch (IOException e) {
             e.printStackTrace();
@@ -39,4 +41,15 @@ public class PlayerGE extends GraphicElement {
                         Image.SCALE_SMOOTH);
     }
 
+    public GridPosition getPositionOfSouthSquare(int maxAllowedRowIndex) {
+        GridPosition proposedNewGridPosition = player.getSouthPosition();
+        if(proposedNewGridPosition.getRow() <= maxAllowedRowIndex) {
+            return proposedNewGridPosition;
+        }
+        return player.getGridPosition();
+    }
+
+    public void placeOnSquare(SquareGE squareGE) {
+        player.moveToSquare(squareGE.getSquare());
+    }
 }

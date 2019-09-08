@@ -2,19 +2,19 @@ package com.switchfully.project.rowdyracers.domain;
 
 public class Square {
 
-    private final Coordinates coordinates;
+    private final GridPosition gridPosition;
     private final Size size;
 
     private FillColor fillColor;
 
-    public Square(Coordinates coordinates, Size size, FillColor fillColor) {
-        this.coordinates = coordinates;
+    public Square(GridPosition gridPosition, Size size, FillColor fillColor) {
+        this.gridPosition = gridPosition;
         this.size = size;
         this.fillColor = fillColor;
     }
 
-    public Coordinates getCoordinates() {
-        return coordinates;
+    public GridPosition getGridPosition() {
+        return gridPosition;
     }
 
     public Size getSize() {

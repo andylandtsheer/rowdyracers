@@ -4,6 +4,9 @@ import com.switchfully.project.rowdyracers.domain.Square;
 
 import java.awt.*;
 
+import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.fromColumnToXCoordinate;
+import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.fromRowToYCoordinate;
+
 public class SquareGE extends GraphicElement {
 
     private final Square square;
@@ -20,9 +23,13 @@ public class SquareGE extends GraphicElement {
                         square.getFillColor().getGreen(),
                         square.getFillColor().getBlue()));
         g.fillRect(
-                square.getCoordinates().getX(),
-                square.getCoordinates().getY(),
+                fromColumnToXCoordinate(square.getGridPosition().getColumn()),
+                fromRowToYCoordinate(square.getGridPosition().getRow()),
                 square.getSize().getWidth(),
                 square.getSize().getHeight());
+    }
+
+    public Square getSquare() {
+        return square;
     }
 }

@@ -1,27 +1,39 @@
 package com.switchfully.project.rowdyracers.views;
 
-import com.switchfully.project.rowdyracers.RowdyRacersWindow;
+import com.switchfully.project.rowdyracers.GameControls;
 import com.switchfully.project.rowdyracers.domain.*;
 import com.switchfully.project.rowdyracers.views.graphicelements.PlayerGE;
 import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
 
+import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.getSquareHeight;
+import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.getSquareWidth;
+
 public class GridController {
 
-    private static final int AMOUNT_OF_GRID_ROWS = 10;
-    private static final int AMOUNT_OF_GRID_COLUMNS = 10;
-    private static final int SPACING_SIZE = 5;
+    static final int AMOUNT_OF_GRID_ROWS = 10;
+    static final int AMOUNT_OF_GRID_COLUMNS = 10;
+    static final int SPACING_SIZE = 5;
 
     private final GridView gridView;
+    private final GameControls gameControls;
 
     private final SquareGE[][] gridGE;
     private final PlayerGE playerGEBlue;
     private final PlayerGE playerGERed;
 
-    public GridController(GridView gridView) {
+    public GridController(GridView gridView, GameControls gameControls) {
         this.gridView = gridView;
+        this.gameControls = gameControls;
+
         this.gridGE = createGrid();
         this.playerGERed = createPlayer(0, 0, "player-red");
         this.playerGEBlue = createPlayer(AMOUNT_OF_GRID_ROWS - 1, AMOUNT_OF_GRID_COLUMNS - 1, "player-blue");
+
+        addComponentsToTheView();
+        makePlayerRedMoveable();
+    }
+
+    private void addComponentsToTheView() {
         this.gridView.addToCanvas(gridGE);
         this.gridView.addToCanvas(playerGERed);
         this.gridView.addToCanvas(playerGEBlue);
@@ -33,9 +45,7 @@ public class GridController {
             for (int column = 0; column < AMOUNT_OF_GRID_COLUMNS; column++) {
                 grid[row][column] = new SquareGE(
                         new Square(
-                                new Coordinates(
-                                        fromColumnToXCoordinate(column),
-                                        fromRowToYCoordinate(row)),
+                                new GridPosition(row, column),
                                 new Size(getSquareWidth(), getSquareHeight()),
                                 FillColor.GREY));
             }
@@ -46,27 +56,18 @@ public class GridController {
     private PlayerGE createPlayer(int gridRow, int gridColumn, String playerImgNameWithoutExtensions) {
         return new PlayerGE(
                 new Player(
-                        new Coordinates(
-                                fromColumnToXCoordinate(gridRow),
-                                fromRowToYCoordinate(gridColumn)),
+                        gridGE[gridRow][gridColumn].getSquare(),
                         new Size(getSquareWidth(), getSquareHeight()),
                         playerImgNameWithoutExtensions
                 ));
     }
 
-    private static int fromRowToYCoordinate(int row) {
-        return row * getSquareHeight() + SPACING_SIZE * row;
+    private void makePlayerRedMoveable() {
+        gameControls.setActionListenerForButtonDirection((event) -> {
+            GridPosition newGridPosition = playerGERed.getPositionOfSouthSquare(AMOUNT_OF_GRID_ROWS - 1);
+            playerGERed.placeOnSquare(gridGE[newGridPosition.getRow()][newGridPosition.getColumn()]);
+            gridView.repaint();
+        }, GameControls.Direction.SOUTH);
     }
 
-    private static int fromColumnToXCoordinate(int column) {
-        return column * getSquareWidth() + SPACING_SIZE * column;
-    }
-
-    private static int getSquareHeight() {
-        return (RowdyRacersWindow.CANVAS_PANEL_HEIGHT - SPACING_SIZE * AMOUNT_OF_GRID_ROWS) / AMOUNT_OF_GRID_ROWS;
-    }
-
-    private static int getSquareWidth() {
-        return (RowdyRacersWindow.CANVAS_PANEL_WIDTH - SPACING_SIZE * AMOUNT_OF_GRID_COLUMNS) / AMOUNT_OF_GRID_COLUMNS;
-    }
 }

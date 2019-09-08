@@ -12,11 +12,10 @@ public class RowdyRacersApplication {
         mainWindow
                 .launch();
 
-        GridController gridController =
-                new GridController(
-                        new GridView(
-                                mainWindow.getGameCanvas(),
-                                mainWindow.getGameControls()));
+        new GridController(
+                new GridView(
+                        mainWindow.getGameCanvas()),
+                mainWindow.getGameControls());
     }
 
 

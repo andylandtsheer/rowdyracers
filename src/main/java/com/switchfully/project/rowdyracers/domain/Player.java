@@ -2,18 +2,23 @@ package com.switchfully.project.rowdyracers.domain;
 
 public class Player {
 
-    private final Coordinates coordinates;
     private final Size size;
     private final String playerImgNameWithoutExtension;
 
-    public Player(Coordinates coordinates, Size size, String playerImgNameWithoutExtension) {
-        this.coordinates = coordinates;
+    private Square square;
+
+    public Player(Square square, Size size, String playerImgNameWithoutExtension) {
+        this.square = square;
         this.size = size;
         this.playerImgNameWithoutExtension = playerImgNameWithoutExtension;
     }
 
-    public Coordinates getCoordinates() {
-        return coordinates;
+    public GridPosition getGridPosition() {
+        return square.getGridPosition();
+    }
+
+    public void moveToSquare(Square newSquare) {
+        square = newSquare;
     }
 
     public Size getSize() {
@@ -23,4 +28,10 @@ public class Player {
     public String getPlayerImgNameWithoutExtension() {
         return playerImgNameWithoutExtension;
     }
+
+    public GridPosition getSouthPosition() {
+        return new GridPosition(square.getGridPosition().getRow() + 1, square.getGridPosition().getColumn());
+    }
+
+
 }

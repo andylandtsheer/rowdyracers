@@ -9,8 +9,8 @@ import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
 
 public class GridView extends View {
 
-    public GridView(GameCanvas gameCanvas, GameControls gameControls) {
-        super(gameCanvas, gameControls);
+    public GridView(GameCanvas gameCanvas) {
+        super(gameCanvas);
     }
 
     public void addToCanvas(PlayerGE playerGE) {
