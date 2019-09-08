@@ -2,7 +2,10 @@ package com.switchfully.project.rowdyracers.views;
 
 import com.switchfully.project.rowdyracers.GameCanvas;
 import com.switchfully.project.rowdyracers.GameFrame;
-import com.switchfully.project.rowdyracers.views.graphicelements.Coordinates;
+import com.switchfully.project.rowdyracers.domain.Coordinates;
+import com.switchfully.project.rowdyracers.domain.FillColor;
+import com.switchfully.project.rowdyracers.domain.Size;
+import com.switchfully.project.rowdyracers.domain.Square;
 import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
 
 import java.awt.*;
@@ -22,10 +25,12 @@ public class GridView extends View {
         for (int row = 0; row < AMOUNT_OF_GRID_ROWS; row++) {
             for (int column = 0; column < AMOUNT_OF_GRID_COLUMNS; column++) {
                 SquareGE square = new SquareGE(
-                        new Coordinates(
-                                column * getSquareWidth() + SPACING_SIZE * column,
-                                row * getSquareHeight() + SPACING_SIZE * row),
-                        new Dimension(getSquareWidth(), getSquareHeight()));
+                        new Square(
+                                new Coordinates(
+                                        column * getSquareWidth() + SPACING_SIZE * column,
+                                        row * getSquareHeight() + SPACING_SIZE * row),
+                                new Size(getSquareWidth(), getSquareHeight()),
+                                FillColor.GREY));
                 getCanvas().addComponent(square);
             }
         }

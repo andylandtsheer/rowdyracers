@@ -1,6 +1,7 @@
-package com.switchfully.project.rowdyracers.views.graphicelements;
+package com.switchfully.project.rowdyracers.domain;
 
 public final class Coordinates {
+
     private final int x;
     private final int y;
 

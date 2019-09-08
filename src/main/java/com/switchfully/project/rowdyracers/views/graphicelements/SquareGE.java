@@ -1,22 +1,28 @@
 package com.switchfully.project.rowdyracers.views.graphicelements;
 
+import com.switchfully.project.rowdyracers.domain.Square;
+
 import java.awt.*;
 
 public class SquareGE extends GraphicElement {
 
-    private static final Color fillColor = Color.darkGray;
+    private final Square square;
 
-    private final Coordinates coordinates;
-    private final Dimension dimension;
-
-    public SquareGE(Coordinates coordinates, Dimension dimension) {
-        this.coordinates = coordinates;
-        this.dimension = dimension;
+    public SquareGE(Square square) {
+        this.square = square;
     }
 
     @Override
     public void paint(Graphics g) {
-        g.setColor(fillColor);
-        g.fillRect(coordinates.getX(), coordinates.getY(), dimension.width, dimension.height);
+        g.setColor(
+                new Color(
+                        square.getFillColor().getRed(),
+                        square.getFillColor().getGreen(),
+                        square.getFillColor().getBlue()));
+        g.fillRect(
+                square.getCoordinates().getX(),
+                square.getCoordinates().getY(),
+                square.getSize().getWidth(),
+                square.getSize().getHeight());
     }
 }
