@@ -1,8 +1,10 @@
-package com.switchfully.project.rowdyracers.views.graphicelements;
+package com.switchfully.project.rowdyracers.gui.components.grid.player;
 
 import com.switchfully.project.rowdyracers.domain.GridPosition;
 import com.switchfully.project.rowdyracers.domain.Player;
-import com.switchfully.project.rowdyracers.views.SquarePositionHelper;
+import com.switchfully.project.rowdyracers.gui.components.GraphicElement;
+import com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper;
+import com.switchfully.project.rowdyracers.gui.components.grid.square.SquareGE;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

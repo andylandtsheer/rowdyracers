@@ -1,4 +1,4 @@
-package com.switchfully.project.rowdyracers.views.graphicelements;
+package com.switchfully.project.rowdyracers.gui.components;
 
 import java.awt.*;
 

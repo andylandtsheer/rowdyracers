@@ -1,11 +1,9 @@
-package com.switchfully.project.rowdyracers.views;
+package com.switchfully.project.rowdyracers.gui.components.grid;
 
-import com.switchfully.project.rowdyracers.GameCanvas;
-import com.switchfully.project.rowdyracers.GameControls;
-import com.switchfully.project.rowdyracers.RowdyRacersWindow;
-import com.switchfully.project.rowdyracers.domain.*;
-import com.switchfully.project.rowdyracers.views.graphicelements.PlayerGE;
-import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
+import com.switchfully.project.rowdyracers.gui.components.View;
+import com.switchfully.project.rowdyracers.gui.components.grid.player.PlayerGE;
+import com.switchfully.project.rowdyracers.gui.components.grid.square.SquareGE;
+import com.switchfully.project.rowdyracers.gui.window.GameCanvas;
 
 public class GridView extends View {
 

@@ -1,18 +1,18 @@
-package com.switchfully.project.rowdyracers.views;
+package com.switchfully.project.rowdyracers.gui.components.grid;
 
-import com.switchfully.project.rowdyracers.GameControls;
 import com.switchfully.project.rowdyracers.domain.*;
-import com.switchfully.project.rowdyracers.views.graphicelements.PlayerGE;
-import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
+import com.switchfully.project.rowdyracers.gui.components.grid.player.PlayerGE;
+import com.switchfully.project.rowdyracers.gui.components.grid.square.SquareGE;
+import com.switchfully.project.rowdyracers.gui.window.GameControls;
 
-import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.getSquareHeight;
-import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.getSquareWidth;
+import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.getSquareHeight;
+import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.getSquareWidth;
 
 public class GridController {
 
-    static final int AMOUNT_OF_GRID_ROWS = 10;
-    static final int AMOUNT_OF_GRID_COLUMNS = 10;
-    static final int SPACING_SIZE = 5;
+    public static final int AMOUNT_OF_GRID_ROWS = 10;
+    public static final int AMOUNT_OF_GRID_COLUMNS = 10;
+    public  static final int SPACING_SIZE = 5;
 
     private final GridView gridView;
     private final GameControls gameControls;

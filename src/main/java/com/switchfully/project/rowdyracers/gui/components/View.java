@@ -1,6 +1,6 @@
-package com.switchfully.project.rowdyracers.views;
+package com.switchfully.project.rowdyracers.gui.components;
 
-import com.switchfully.project.rowdyracers.GameCanvas;
+import com.switchfully.project.rowdyracers.gui.window.GameCanvas;
 
 public abstract class View {
 

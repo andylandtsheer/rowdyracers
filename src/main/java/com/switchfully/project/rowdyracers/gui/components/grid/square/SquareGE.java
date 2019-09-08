@@ -1,11 +1,12 @@
-package com.switchfully.project.rowdyracers.views.graphicelements;
+package com.switchfully.project.rowdyracers.gui.components.grid.square;
 
 import com.switchfully.project.rowdyracers.domain.Square;
+import com.switchfully.project.rowdyracers.gui.components.GraphicElement;
 
 import java.awt.*;
 
-import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.fromColumnToXCoordinate;
-import static com.switchfully.project.rowdyracers.views.SquarePositionHelper.fromRowToYCoordinate;
+import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.fromColumnToXCoordinate;
+import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.fromRowToYCoordinate;
 
 public class SquareGE extends GraphicElement {
 

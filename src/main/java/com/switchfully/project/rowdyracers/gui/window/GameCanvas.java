@@ -1,4 +1,4 @@
-package com.switchfully.project.rowdyracers;
+package com.switchfully.project.rowdyracers.gui.window;
 
 import java.awt.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.switchfully.project.rowdyracers;
+package com.switchfully.project.rowdyracers.gui.window;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,14 +21,14 @@ public class RowdyRacersWindow extends JFrame {
     private final GamePanel gamePanel;
     private final ControlsPanel controlsPanel;
 
-    RowdyRacersWindow(String title) throws HeadlessException {
+    public RowdyRacersWindow(String title) throws HeadlessException {
         super(title);
         this.setResizable(false);
         this.gamePanel = new GamePanel();
         this.controlsPanel = new ControlsPanel();
     }
 
-    void launch() {
+    public void launch() {
         this.add(controlsPanel, BorderLayout.WEST);
         this.add(gamePanel, BorderLayout.EAST);
         controlsPanel.setPreferredSize(new Dimension(CONTROL_PANEL_WIDTH, WINDOW_HEIGHT));

@@ -1,9 +1,9 @@
-package com.switchfully.project.rowdyracers.views;
+package com.switchfully.project.rowdyracers.gui.components;
 
-import static com.switchfully.project.rowdyracers.RowdyRacersWindow.CANVAS_PANEL_HEIGHT;
-import static com.switchfully.project.rowdyracers.RowdyRacersWindow.CANVAS_PANEL_WIDTH;
-import static com.switchfully.project.rowdyracers.views.GridController.*;
-import static com.switchfully.project.rowdyracers.views.GridController.SPACING_SIZE;
+import static com.switchfully.project.rowdyracers.gui.window.RowdyRacersWindow.CANVAS_PANEL_HEIGHT;
+import static com.switchfully.project.rowdyracers.gui.window.RowdyRacersWindow.CANVAS_PANEL_WIDTH;
+import static com.switchfully.project.rowdyracers.gui.components.grid.GridController.*;
+import static com.switchfully.project.rowdyracers.gui.components.grid.GridController.SPACING_SIZE;
 
 public class SquarePositionHelper {
 

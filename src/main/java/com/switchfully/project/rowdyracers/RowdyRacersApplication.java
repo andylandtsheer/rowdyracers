@@ -1,7 +1,8 @@
 package com.switchfully.project.rowdyracers;
 
-import com.switchfully.project.rowdyracers.views.GridController;
-import com.switchfully.project.rowdyracers.views.GridView;
+import com.switchfully.project.rowdyracers.gui.components.grid.GridController;
+import com.switchfully.project.rowdyracers.gui.components.grid.GridView;
+import com.switchfully.project.rowdyracers.gui.window.RowdyRacersWindow;
 
 public class RowdyRacersApplication {
 
