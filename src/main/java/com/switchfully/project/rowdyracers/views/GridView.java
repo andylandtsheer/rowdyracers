@@ -2,10 +2,8 @@ package com.switchfully.project.rowdyracers.views;
 
 import com.switchfully.project.rowdyracers.GameCanvas;
 import com.switchfully.project.rowdyracers.GameFrame;
-import com.switchfully.project.rowdyracers.domain.Coordinates;
-import com.switchfully.project.rowdyracers.domain.FillColor;
-import com.switchfully.project.rowdyracers.domain.Size;
-import com.switchfully.project.rowdyracers.domain.Square;
+import com.switchfully.project.rowdyracers.domain.*;
+import com.switchfully.project.rowdyracers.views.graphicelements.PlayerGE;
 import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
 
 import java.awt.*;
@@ -19,6 +17,28 @@ public class GridView extends View {
     public GridView(GameCanvas canvas) {
         super(canvas);
         createSquareShapes();
+        createPlayers();
+    }
+
+    private void createPlayers() {
+        getCanvas().addComponent(
+                new PlayerGE(
+                        new Player(
+                                new Coordinates(
+                                        fromColumnToXCoordinate(0),
+                                        fromRowToYCoordinate(0)),
+                                new Size(getSquareWidth(), getSquareHeight()),
+                                "player-red"
+                        )));
+        getCanvas().addComponent(
+                new PlayerGE(
+                        new Player(
+                                new Coordinates(
+                                        fromColumnToXCoordinate(AMOUNT_OF_GRID_COLUMNS - 1),
+                                        fromRowToYCoordinate(AMOUNT_OF_GRID_ROWS - 1)),
+                                new Size(getSquareWidth(), getSquareHeight()),
+                                "player-blue"
+                        )));
     }
 
     private void createSquareShapes() {
@@ -27,8 +47,8 @@ public class GridView extends View {
                 SquareGE square = new SquareGE(
                         new Square(
                                 new Coordinates(
-                                        column * getSquareWidth() + SPACING_SIZE * column,
-                                        row * getSquareHeight() + SPACING_SIZE * row),
+                                        fromColumnToXCoordinate(column),
+                                        fromRowToYCoordinate(row)),
                                 new Size(getSquareWidth(), getSquareHeight()),
                                 FillColor.GREY));
                 getCanvas().addComponent(square);
@@ -36,11 +56,19 @@ public class GridView extends View {
         }
     }
 
-    private int getSquareHeight() {
+    private static int fromRowToYCoordinate(int row) {
+        return row * getSquareHeight() + SPACING_SIZE * row;
+    }
+
+    private static int fromColumnToXCoordinate(int column) {
+        return column * getSquareWidth() + SPACING_SIZE * column;
+    }
+
+    private static int getSquareHeight() {
         return (GameFrame.CANVAS_PANEL_HEIGHT - SPACING_SIZE * AMOUNT_OF_GRID_ROWS) / AMOUNT_OF_GRID_ROWS;
     }
 
-    private int getSquareWidth() {
+    private static int getSquareWidth() {
         return (GameFrame.CANVAS_PANEL_WIDTH - SPACING_SIZE * AMOUNT_OF_GRID_COLUMNS) / AMOUNT_OF_GRID_COLUMNS;
     }
 
