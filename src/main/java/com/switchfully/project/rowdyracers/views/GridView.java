@@ -1,12 +1,11 @@
 package com.switchfully.project.rowdyracers.views;
 
 import com.switchfully.project.rowdyracers.GameCanvas;
-import com.switchfully.project.rowdyracers.GameFrame;
+import com.switchfully.project.rowdyracers.GameControls;
+import com.switchfully.project.rowdyracers.RowdyRacersWindow;
 import com.switchfully.project.rowdyracers.domain.*;
 import com.switchfully.project.rowdyracers.views.graphicelements.PlayerGE;
 import com.switchfully.project.rowdyracers.views.graphicelements.SquareGE;
-
-import java.awt.*;
 
 public class GridView extends View {
 
@@ -14,14 +13,14 @@ public class GridView extends View {
     private static final int AMOUNT_OF_GRID_COLUMNS = 10;
     private static final int SPACING_SIZE = 5;
 
-    public GridView(GameCanvas canvas) {
-        super(canvas);
+    public GridView(GameCanvas gameCanvas, GameControls gameControls) {
+        super(gameCanvas, gameControls);
         createSquareShapes();
         createPlayers();
     }
 
     private void createPlayers() {
-        getCanvas().addComponent(
+        getGameCanvas().addComponent(
                 new PlayerGE(
                         new Player(
                                 new Coordinates(
@@ -30,7 +29,7 @@ public class GridView extends View {
                                 new Size(getSquareWidth(), getSquareHeight()),
                                 "player-red"
                         )));
-        getCanvas().addComponent(
+        getGameCanvas().addComponent(
                 new PlayerGE(
                         new Player(
                                 new Coordinates(
@@ -51,7 +50,7 @@ public class GridView extends View {
                                         fromRowToYCoordinate(row)),
                                 new Size(getSquareWidth(), getSquareHeight()),
                                 FillColor.GREY));
-                getCanvas().addComponent(square);
+                getGameCanvas().addComponent(square);
             }
         }
     }
@@ -65,11 +64,11 @@ public class GridView extends View {
     }
 
     private static int getSquareHeight() {
-        return (GameFrame.CANVAS_PANEL_HEIGHT - SPACING_SIZE * AMOUNT_OF_GRID_ROWS) / AMOUNT_OF_GRID_ROWS;
+        return (RowdyRacersWindow.CANVAS_PANEL_HEIGHT - SPACING_SIZE * AMOUNT_OF_GRID_ROWS) / AMOUNT_OF_GRID_ROWS;
     }
 
     private static int getSquareWidth() {
-        return (GameFrame.CANVAS_PANEL_WIDTH - SPACING_SIZE * AMOUNT_OF_GRID_COLUMNS) / AMOUNT_OF_GRID_COLUMNS;
+        return (RowdyRacersWindow.CANVAS_PANEL_WIDTH - SPACING_SIZE * AMOUNT_OF_GRID_COLUMNS) / AMOUNT_OF_GRID_COLUMNS;
     }
 
 

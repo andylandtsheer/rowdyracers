@@ -1,30 +1,17 @@
 package com.switchfully.project.rowdyracers;
 
-import javax.swing.*;
 import java.awt.*;
 
-/**
- * Represents a panel that contains the GUI Controls to move a {@code Player}
- */
-public class ControlPanel extends JPanel {
+public class GameControls {
 
-    private static final Color BACKGROUND_COLOR = Color.black;
+    private final Button[][] controlButtons;
 
-    private final Button[][] buttons;
-
-    public ControlPanel() {
-        this.setLayout(new GridLayout(3, 3, 10, 10));
-        this.setBackground(BACKGROUND_COLOR);
-        buttons = createControlButtons();
-        addButtonsToPanel();
+    public GameControls() {
+        controlButtons = createControlButtons();
     }
 
-    private void addButtonsToPanel() {
-        for (Button[] buttonRows : buttons) {
-            for (Button button : buttonRows) {
-                this.add(button != null ? button : new Label(""));
-            }
-        }
+    public Button[][] getControlButtons() {
+        return controlButtons;
     }
 
     /**
