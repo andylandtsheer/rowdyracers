@@ -1,9 +1,8 @@
 package com.switchfully.project.rowdyracers.gui.elements.utility;
 
+import static com.switchfully.project.rowdyracers.RowdyRacersApplication.*;
 import static com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow.CANVAS_PANEL_HEIGHT;
 import static com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow.CANVAS_PANEL_WIDTH;
-import static com.switchfully.project.rowdyracers.gui.GameController.*;
-import static com.switchfully.project.rowdyracers.gui.GameController.SPACING_SIZE;
 
 public class SquareUtility {
 

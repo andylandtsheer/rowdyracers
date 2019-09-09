@@ -8,6 +8,10 @@ import com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow;
 
 public class RowdyRacersApplication {
 
+    public static final int AMOUNT_OF_GRID_ROWS = 10;
+    public static final int AMOUNT_OF_GRID_COLUMNS = 10;
+    public static final int SPACING_SIZE = 5;
+
     public static void main(String[] args) {
 
         // Create the actual window (it is not yet launched)
@@ -15,7 +19,7 @@ public class RowdyRacersApplication {
 
         // Create the domain objects
         Game game = new Game(
-                new Grid(10, 10),
+                new Grid(AMOUNT_OF_GRID_ROWS, AMOUNT_OF_GRID_COLUMNS),
                 new Player("player-red"),
                 new Player("player-blue")
         );

@@ -8,12 +8,9 @@ import com.switchfully.project.rowdyracers.gui.windowpanels.GameControls;
 
 public class GameController {
 
-    public static final int AMOUNT_OF_GRID_ROWS = 10;
-    public static final int AMOUNT_OF_GRID_COLUMNS = 10;
-    public static final int SPACING_SIZE = 5;
-
     private final GameCanvas gameCanvas;
     private final GameControls gameControls;
+
     private final Game game;
 
     public GameController(GameCanvas gameCanvas, GameControls gameControls, Game game) {
