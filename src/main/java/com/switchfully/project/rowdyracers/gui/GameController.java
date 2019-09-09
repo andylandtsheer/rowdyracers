@@ -42,6 +42,11 @@ public class GameController {
                     game.moveToSouth();
                     gameCanvas.repaint();
                 }, GameControls.Direction.SOUTH);
+        gameControls.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    game.moveToEast();
+                    gameCanvas.repaint();
+                }, GameControls.Direction.EAST);
     }
 
 }

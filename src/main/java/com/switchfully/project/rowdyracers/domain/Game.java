@@ -20,9 +20,19 @@ public class Game {
     }
 
     public void moveToSouth() {
-        Square newSquare = grid.getSquareFor(new GridPosition(
+        moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() + 1,
                 currentPlayer.getGridPosition().getColumnIndex()));
+    }
+
+    public void moveToEast() {
+        moveTo(new GridPosition(
+                currentPlayer.getGridPosition().getRowIndex(),
+                currentPlayer.getGridPosition().getColumnIndex() + 1));
+    }
+
+    private void moveTo(GridPosition gridPositionToMoveTo) {
+        Square newSquare = grid.getSquareFor(gridPositionToMoveTo);
         if (newSquare != null) {
             currentPlayer.moveTo(newSquare);
         }
