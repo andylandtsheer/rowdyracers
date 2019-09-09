@@ -1,9 +1,9 @@
-package com.switchfully.project.rowdyracers.gui.window;
+package com.switchfully.project.rowdyracers.gui.windowpanels;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-import static com.switchfully.project.rowdyracers.gui.window.GameControls.Direction.*;
+import static com.switchfully.project.rowdyracers.gui.windowpanels.GameControls.Direction.*;
 
 public class GameControls {
 

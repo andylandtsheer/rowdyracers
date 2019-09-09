@@ -1,4 +1,4 @@
-package com.switchfully.project.rowdyracers.gui.window;
+package com.switchfully.project.rowdyracers.gui.windowpanels;
 
 import javax.swing.*;
 import java.awt.*;

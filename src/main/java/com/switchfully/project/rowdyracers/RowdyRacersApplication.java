@@ -4,7 +4,7 @@ import com.switchfully.project.rowdyracers.domain.Game;
 import com.switchfully.project.rowdyracers.domain.Grid;
 import com.switchfully.project.rowdyracers.domain.Player;
 import com.switchfully.project.rowdyracers.gui.GameController;
-import com.switchfully.project.rowdyracers.gui.window.RowdyRacersWindow;
+import com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow;
 
 public class RowdyRacersApplication {
 

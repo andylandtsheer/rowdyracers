@@ -3,8 +3,8 @@ package com.switchfully.project.rowdyracers.gui;
 import com.switchfully.project.rowdyracers.domain.Game;
 import com.switchfully.project.rowdyracers.gui.elements.GridGE;
 import com.switchfully.project.rowdyracers.gui.elements.PlayerGE;
-import com.switchfully.project.rowdyracers.gui.window.GameCanvas;
-import com.switchfully.project.rowdyracers.gui.window.GameControls;
+import com.switchfully.project.rowdyracers.gui.windowpanels.GameCanvas;
+import com.switchfully.project.rowdyracers.gui.windowpanels.GameControls;
 
 public class GameController {
 
