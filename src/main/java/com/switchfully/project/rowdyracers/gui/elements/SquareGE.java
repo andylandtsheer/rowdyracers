@@ -1,12 +1,11 @@
-package com.switchfully.project.rowdyracers.gui.components.grid.square;
+package com.switchfully.project.rowdyracers.gui.elements;
 
 import com.switchfully.project.rowdyracers.domain.Square;
-import com.switchfully.project.rowdyracers.gui.components.GraphicElement;
 
 import java.awt.*;
 
-import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.fromColumnToXCoordinate;
-import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.fromRowToYCoordinate;
+import static com.switchfully.project.rowdyracers.gui.elements.utility.SquareUtility.fromColumnIndexToXCoordinate;
+import static com.switchfully.project.rowdyracers.gui.elements.utility.SquareUtility.fromRowIndexToYCoordinate;
 
 public class SquareGE extends GraphicElement {
 
@@ -24,8 +23,8 @@ public class SquareGE extends GraphicElement {
                         square.getFillColor().getGreen(),
                         square.getFillColor().getBlue()));
         g.fillRect(
-                fromColumnToXCoordinate(square.getGridPosition().getColumnIndex()),
-                fromRowToYCoordinate(square.getGridPosition().getRowIndex()),
+                fromColumnIndexToXCoordinate(square.getGridPosition().getColumnIndex()),
+                fromRowIndexToYCoordinate(square.getGridPosition().getRowIndex()),
                 square.getSize().getWidth(),
                 square.getSize().getHeight());
     }

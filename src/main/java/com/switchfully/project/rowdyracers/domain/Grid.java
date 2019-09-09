@@ -1,7 +1,7 @@
 package com.switchfully.project.rowdyracers.domain;
 
-import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.getSquareHeight;
-import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.getSquareWidth;
+import static com.switchfully.project.rowdyracers.gui.elements.utility.SquareUtility.getSquareHeight;
+import static com.switchfully.project.rowdyracers.gui.elements.utility.SquareUtility.getSquareWidth;
 
 public class Grid {
 

@@ -3,7 +3,7 @@ package com.switchfully.project.rowdyracers;
 import com.switchfully.project.rowdyracers.domain.Game;
 import com.switchfully.project.rowdyracers.domain.Grid;
 import com.switchfully.project.rowdyracers.domain.Player;
-import com.switchfully.project.rowdyracers.gui.components.grid.GameController;
+import com.switchfully.project.rowdyracers.gui.GameController;
 import com.switchfully.project.rowdyracers.gui.window.RowdyRacersWindow;
 
 public class RowdyRacersApplication {

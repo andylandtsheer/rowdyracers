@@ -1,14 +1,12 @@
-package com.switchfully.project.rowdyracers.gui.components.grid.player;
+package com.switchfully.project.rowdyracers.gui.elements;
 
 import com.switchfully.project.rowdyracers.domain.Player;
-import com.switchfully.project.rowdyracers.gui.components.GraphicElement;
-import com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
 
-import static com.switchfully.project.rowdyracers.gui.components.SquarePositionHelper.*;
+import static com.switchfully.project.rowdyracers.gui.elements.utility.SquareUtility.*;
 
 public class PlayerGE extends GraphicElement {
 
@@ -26,8 +24,8 @@ public class PlayerGE extends GraphicElement {
         try {
             g.drawImage(
                     createImage(),
-                    fromColumnToXCoordinate(player.getGridPosition().getColumnIndex()),
-                    fromRowToYCoordinate(player.getGridPosition().getRowIndex()),
+                    fromColumnIndexToXCoordinate(player.getGridPosition().getColumnIndex()),
+                    fromRowIndexToYCoordinate(player.getGridPosition().getRowIndex()),
                     null);
         } catch (IOException e) {
             e.printStackTrace();

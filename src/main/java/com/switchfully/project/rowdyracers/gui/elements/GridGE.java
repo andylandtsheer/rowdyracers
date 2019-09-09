@@ -1,9 +1,7 @@
-package com.switchfully.project.rowdyracers.gui.components.grid;
+package com.switchfully.project.rowdyracers.gui.elements;
 
 import com.switchfully.project.rowdyracers.domain.Grid;
 import com.switchfully.project.rowdyracers.domain.Square;
-import com.switchfully.project.rowdyracers.gui.components.GraphicElement;
-import com.switchfully.project.rowdyracers.gui.components.grid.square.SquareGE;
 
 import java.awt.*;
 
@@ -17,6 +15,7 @@ public class GridGE extends GraphicElement {
 
     @Override
     public void paint(Graphics g) {
+        // Grid itself has nothing to draw (for now)
         // The individual squares are drawn by the SquareGE class.
     }
 

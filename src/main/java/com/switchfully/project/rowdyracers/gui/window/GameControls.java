@@ -23,7 +23,7 @@ public class GameControls {
      * @param direction the {@code Direction} of the button for which we want to add the {@code ActionListener}
      * @return true if the actionListener could be set for the button with the provided {@code Direction}.
      */
-    public boolean setActionListenerForButtonDirection(ActionListener actionListener, Direction direction) {
+    public boolean setActionListenerForButtonWithDirection(ActionListener actionListener, Direction direction) {
         for (Button[] buttonRow : controlButtons) {
             for (Button button : buttonRow) {
                 if(button != null && button.getLabel().equals(direction.getLabel())) {
