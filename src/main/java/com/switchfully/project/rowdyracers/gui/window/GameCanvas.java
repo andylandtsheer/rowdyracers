@@ -20,6 +20,14 @@ public class GameCanvas extends Canvas {
         componentsToPaint.add(component);
     }
 
+    public void addComponents(Component[][] components) {
+        for (Component[] componentRow: components) {
+            for(Component component: componentRow) {
+                addComponent(component);
+            }
+        }
+    }
+
     @Override
     public void paint(Graphics g) {
         super.paint(g);

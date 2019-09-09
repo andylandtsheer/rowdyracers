@@ -24,8 +24,8 @@ public class SquareGE extends GraphicElement {
                         square.getFillColor().getGreen(),
                         square.getFillColor().getBlue()));
         g.fillRect(
-                fromColumnToXCoordinate(square.getGridPosition().getColumn()),
-                fromRowToYCoordinate(square.getGridPosition().getRow()),
+                fromColumnToXCoordinate(square.getGridPosition().getColumnIndex()),
+                fromRowToYCoordinate(square.getGridPosition().getRowIndex()),
                 square.getSize().getWidth(),
                 square.getSize().getHeight());
     }

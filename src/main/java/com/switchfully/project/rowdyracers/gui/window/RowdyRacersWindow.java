@@ -12,11 +12,12 @@ import java.awt.*;
 public class RowdyRacersWindow extends JFrame {
 
     private static final int WINDOW_WIDTH = 1050;
-    private final int WINDOW_HEIGHT = 750;
-    private static final int CONTROL_PANEL_WIDTH = 300;
-
-    public static final int CANVAS_PANEL_WIDTH = WINDOW_WIDTH - CONTROL_PANEL_WIDTH - 15;
-    public static final int CANVAS_PANEL_HEIGHT = WINDOW_WIDTH - CONTROL_PANEL_WIDTH - 40;
+    private static final int WINDOW_HEIGHT = 750;
+    private static final int WIDTH_SPACING = 15;
+    private static final int HEIGHT_SPACING = 40;
+    private static final int CONTROLS_PANEL_WIDTH = 300;
+    public static final int CANVAS_PANEL_WIDTH = WINDOW_WIDTH - CONTROLS_PANEL_WIDTH - WIDTH_SPACING;
+    public static final int CANVAS_PANEL_HEIGHT = WINDOW_WIDTH - CONTROLS_PANEL_WIDTH - HEIGHT_SPACING;
 
     private final GamePanel gamePanel;
     private final ControlsPanel controlsPanel;
@@ -31,7 +32,7 @@ public class RowdyRacersWindow extends JFrame {
     public void launch() {
         this.add(controlsPanel, BorderLayout.WEST);
         this.add(gamePanel, BorderLayout.EAST);
-        controlsPanel.setPreferredSize(new Dimension(CONTROL_PANEL_WIDTH, WINDOW_HEIGHT));
+        controlsPanel.setPreferredSize(new Dimension(CONTROLS_PANEL_WIDTH, WINDOW_HEIGHT));
         gamePanel.setPreferredSize(new Dimension(CANVAS_PANEL_WIDTH, WINDOW_HEIGHT));
         this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         this.setBackground(Color.darkGray);
@@ -66,7 +67,7 @@ public class RowdyRacersWindow extends JFrame {
         private GameCanvas createCanvasComponent() {
             GameCanvas canvas = new GameCanvas();
             canvas.setPreferredSize(new Dimension(RowdyRacersWindow.CANVAS_PANEL_WIDTH, RowdyRacersWindow.CANVAS_PANEL_HEIGHT));
-            canvas.setBackground(BACKGROUND_COLOR);
+            canvas.setBackground(Color.BLACK);
             return canvas;
         }
 

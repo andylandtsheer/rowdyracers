@@ -24,4 +24,5 @@ public class Square {
     public FillColor getFillColor() {
         return fillColor;
     }
+
 }
