@@ -7,6 +7,8 @@ You can use it as the starting point of your own Rowdy Racers application.
 ## Usage
 
 You launch the application by executing the `main` method fo the `RowdyRacersApplication` class.
+- You can move the Red player to the East or South by clicking the corresponding buttons (the bounds of the Grid will
+already be respected).
 
 ## Architecture
 
