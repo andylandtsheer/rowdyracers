@@ -33,7 +33,7 @@ Our domain should be pure and completely independent from any GUI library / fram
     - Our domain is (G)UI framework agnostic, we can rather quickly use our domain in a different GUI than the current. 
 
 When working with this skeleton, it is important you remember - and adhere to - these rules.
-- Otherwise, before you known it, your domain is tightly coupled with your GUI. Making it very diffucult to keep a clear 
+- Otherwise, before you known it, your domain is tightly coupled with your GUI. Making it very difficult to keep a clear 
 overview of what is happening where, updates to the GUI might impact the domain, replacing the GUI with 
 another technology becomes difficult and a lot of work,...  
 
