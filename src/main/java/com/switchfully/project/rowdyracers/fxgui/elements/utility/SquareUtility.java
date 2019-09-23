@@ -1,8 +1,8 @@
-package com.switchfully.project.rowdyracers.gui.elements.utility;
+package com.switchfully.project.rowdyracers.fxgui.elements.utility;
 
-import static com.switchfully.project.rowdyracers.RowdyRacersApplication.*;
-import static com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow.CANVAS_PANEL_HEIGHT;
-import static com.switchfully.project.rowdyracers.gui.windowpanels.RowdyRacersWindow.CANVAS_PANEL_WIDTH;
+import static com.switchfully.project.rowdyracers.RowdyRacersFxApplication.*;
+import static com.switchfully.project.rowdyracers.fxgui.GameView.CANVAS_PANEL_HEIGHT;
+import static com.switchfully.project.rowdyracers.fxgui.GameView.CANVAS_PANEL_WIDTH;
 
 public class SquareUtility {
 

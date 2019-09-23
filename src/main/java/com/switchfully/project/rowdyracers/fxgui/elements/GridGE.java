@@ -1,22 +1,15 @@
-package com.switchfully.project.rowdyracers.gui.elements;
+package com.switchfully.project.rowdyracers.fxgui.elements;
 
 import com.switchfully.project.rowdyracers.domain.Grid;
 import com.switchfully.project.rowdyracers.domain.Square;
+import javafx.scene.canvas.GraphicsContext;
 
-import java.awt.*;
-
-public class GridGE extends GraphicElement {
+public class GridGE implements Drawable {
 
     private final Grid grid;
 
     public GridGE(Grid grid) {
         this.grid = grid;
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        // Grid itself has nothing to draw (for now)
-        // The individual squares are drawn by the SquareGE class.
     }
 
     public SquareGE[][] getSquares() {
@@ -28,5 +21,10 @@ public class GridGE extends GraphicElement {
             }
         }
         return squares;
+    }
+
+    @Override
+    public void paint(GraphicsContext context) {
+        // Nothing to paint...
     }
 }
