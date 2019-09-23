@@ -1,7 +1,6 @@
 package com.switchfully.project.rowdyracers.domain;
 
-import static com.switchfully.project.rowdyracers.fxgui.elements.utility.SquareUtility.getSquareHeight;
-import static com.switchfully.project.rowdyracers.fxgui.elements.utility.SquareUtility.getSquareWidth;
+import static com.switchfully.project.rowdyracers.domain.Square.WIDTH_HEIGHT_IN_PX;
 
 public class Grid {
 
@@ -30,7 +29,7 @@ public class Grid {
                 squares[row][column] =
                         new Square(
                                 new GridPosition(row, column),
-                                new Size(getSquareWidth(), getSquareHeight()),
+                                new Size(WIDTH_HEIGHT_IN_PX, WIDTH_HEIGHT_IN_PX),
                                 FillColor.GREY);
             }
         }

@@ -2,6 +2,8 @@ package com.switchfully.project.rowdyracers.domain;
 
 public class Square {
 
+    public static final int WIDTH_HEIGHT_IN_PX = 50;
+
     private final GridPosition gridPosition;
     private final Size size;
 

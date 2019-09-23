@@ -1,25 +1,16 @@
 package com.switchfully.project.rowdyracers.fxgui.elements.utility;
 
-import static com.switchfully.project.rowdyracers.RowdyRacersFxApplication.*;
-import static com.switchfully.project.rowdyracers.fxgui.GameView.CANVAS_PANEL_HEIGHT;
-import static com.switchfully.project.rowdyracers.fxgui.GameView.CANVAS_PANEL_WIDTH;
+import static com.switchfully.project.rowdyracers.RowdyRacersFxApplication.SPACING_SIZE;
+import static com.switchfully.project.rowdyracers.domain.Square.WIDTH_HEIGHT_IN_PX;
 
 public class SquareUtility {
 
-    public static int getSquareHeight() {
-        return (CANVAS_PANEL_HEIGHT - SPACING_SIZE * AMOUNT_OF_GRID_ROWS) / AMOUNT_OF_GRID_ROWS;
-    }
-
-    public static int getSquareWidth() {
-        return (CANVAS_PANEL_WIDTH - SPACING_SIZE * AMOUNT_OF_GRID_COLUMNS) / AMOUNT_OF_GRID_COLUMNS;
-    }
-
     public static int fromRowIndexToYCoordinate(int rowIndex) {
-        return rowIndex * getSquareHeight() + SPACING_SIZE * rowIndex;
+        return rowIndex * WIDTH_HEIGHT_IN_PX + SPACING_SIZE * rowIndex;
     }
 
     public static int fromColumnIndexToXCoordinate(int columnIndex) {
-        return columnIndex * getSquareWidth() + SPACING_SIZE * columnIndex;
+        return columnIndex * WIDTH_HEIGHT_IN_PX + SPACING_SIZE * columnIndex;
     }
 
 }

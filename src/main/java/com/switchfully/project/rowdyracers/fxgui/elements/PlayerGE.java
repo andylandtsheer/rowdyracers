@@ -4,7 +4,9 @@ import com.switchfully.project.rowdyracers.domain.Player;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 
-import static com.switchfully.project.rowdyracers.fxgui.elements.utility.SquareUtility.*;
+import static com.switchfully.project.rowdyracers.domain.Square.WIDTH_HEIGHT_IN_PX;
+import static com.switchfully.project.rowdyracers.fxgui.elements.utility.SquareUtility.fromColumnIndexToXCoordinate;
+import static com.switchfully.project.rowdyracers.fxgui.elements.utility.SquareUtility.fromRowIndexToYCoordinate;
 
 public class PlayerGE implements Drawable {
 
@@ -19,8 +21,7 @@ public class PlayerGE implements Drawable {
 
     private Image createImage() {
         return new Image(getClass().getResourceAsStream(RESOURCES_BASE_PATH + player.getPlayerImgNameWithoutExtension() + IMG_EXTENSION),
-                getSquareWidth(),
-                getSquareHeight(), true, true);
+                WIDTH_HEIGHT_IN_PX, WIDTH_HEIGHT_IN_PX, true, true);
     }
 
     @Override
