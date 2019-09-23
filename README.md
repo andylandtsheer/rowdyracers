@@ -1,8 +1,9 @@
-# Rowdy Racers Skeleton
+# Rowdy Racers Skeleton - JavaFX
 
 With this skeleton, the basic setup for the Rowdy Racers project - with already some basic functionality is completely done.
 
 You can use it as the starting point of your own Rowdy Racers application.
+- This skeleton uses JavaFX (without using FXML).
 
 ## Usage
 
@@ -17,7 +18,7 @@ The project is divided into 2 distinct parts:
 1. The **domain**
     - Which resides in the `com.switchfully.project.rowdyracers.domain` package.
 2. The **GUI**
-    - Which resides in the `com.switchfully.project.rowdyracers.gui` package.
+    - Which resides in the `com.switchfully.project.rowdyracers.fxgui` package.
 
 _And, as a third part: the `RowdyRacersApplication` class which instantiates and launches the application._
     
@@ -39,7 +40,7 @@ another technology becomes difficult and a lot of work,...
 
 ### GUI
 
-The current GUI (located inside of `com.switchfully.project.rowdyracers.gui`) is implemented using **Java Swing**.
+The current GUI (located inside of `com.switchfully.project.rowdyracers.fxgui`) is implemented using **JavaFX**.
 
 - The GUI elements use the domain objects and their data to provide visual representation in the GUI of these domain objects.
     - E.g.: A `Player` (from the domain) is represented by a `PlayerGE` (GraphicalElement) which draws the player as an image
@@ -47,9 +48,9 @@ The current GUI (located inside of `com.switchfully.project.rowdyracers.gui`) is
 - The GUI should be as **dumb as possible**, meaning it should not implement any of the rules of Rowdy Racers. It should
 always delegate that responsibility to the domain objects.
 
-You are perfectly free to drop this GUI for a new GUI (e.g. a GUI written with JavaFX instead of Swing (`JavaFX > Swing`)).
-- How? Create a new package `com.switchfully.project.rowdyracers.guifx` in which you build your own GUI classes and 
-objects using JavaFX. Then, change to `RowdyRacersApplication` so that it uses your new GUI instead of the old.
+You are perfectly free to drop this GUI for another GUI (e.g. a GUI written with Swing instead of JavaFX (although `JavaFX > Swing`)).
+- How? Create a new package `com.switchfully.project.rowdyracers.swinggui` in which you build your own GUI classes and 
+objects using Swing. Then, change the `RowdyRacersFxApplication` class so that it uses your new GUI instead of the old.
     - Because of our architecture / design, you will have to change nothing to your domain, nor will you have to 
     reimplement any existing business rules (as they are also part of your domain and not your GUI).
 
