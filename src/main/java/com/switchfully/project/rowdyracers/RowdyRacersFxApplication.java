@@ -36,11 +36,13 @@ public class RowdyRacersFxApplication extends Application {
         );
 
         // Create the startup view
-        GameView gameView = new GameView(Arrays.asList(
-                new GridGE(gameModel.getGrid()),
-                new PlayerGE(gameModel.getPlayerRed()),
-                new PlayerGE(gameModel.getPlayerBlue())
-        ).toArray(Drawable[]::new));
+        GameView gameView = new GameView(
+                new Drawable[]{
+                        new GridGE(gameModel.getGrid()),
+                        new PlayerGE(gameModel.getPlayerRed()),
+                        new PlayerGE(gameModel.getPlayerBlue())
+                }
+        );
 
         // Create the startup controller
         GameController gameController = new GameController(
