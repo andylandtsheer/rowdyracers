@@ -3,7 +3,6 @@ package com.switchfully.project.rowdyracers.domain;
 public class Player {
 
     private final String playerImgNameWithoutExtension;
-
     private Square square;
 
     public Player(String playerImgNameWithoutExtension) {
@@ -21,6 +20,5 @@ public class Player {
     public String getPlayerImgNameWithoutExtension() {
         return playerImgNameWithoutExtension;
     }
-
 
 }
