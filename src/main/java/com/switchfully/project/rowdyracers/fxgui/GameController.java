@@ -4,8 +4,8 @@ import com.switchfully.project.rowdyracers.domain.Game;
 
 public class GameController {
 
-    private GameView gameView;
-    private Game gameModel;
+    private final GameView gameView;
+    private final Game gameModel;
 
     public GameController(Game gameModel, GameView gameView) {
         this.gameView = gameView;
