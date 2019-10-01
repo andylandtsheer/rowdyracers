@@ -51,7 +51,6 @@ public class GameView {
     }
 
     private Button[] createDirectionButtons() {
-
         return new Button[]{
                 createButton(Direction.NORTH_WEST), createButton(Direction.NORTH), createButton(Direction.NORTH_EAST),
                 createButton(Direction.WEST), createDisabledButton(), createButton(Direction.EAST),
