@@ -105,7 +105,18 @@ public class Game {
     }
 
     private boolean newPositionIsAvailable(Square newSquare) {
-        return newSquare != null;
+        if (newSquare == null) {
+            return false;
+        }
+        if (playerBlue.getGridPosition().equals(newSquare.getGridPosition())||playerRed.getGridPosition().equals(newSquare.getGridPosition())){
+            return false;
+        }
+        for (Wall wall:walls){
+            if (wall.getGridPosition().equals(newSquare.getGridPosition())){
+                return false;
+            }
+        }
+        return true;
     }
 
     private boolean moveTo(GridPosition gridPositionToMoveTo) {
