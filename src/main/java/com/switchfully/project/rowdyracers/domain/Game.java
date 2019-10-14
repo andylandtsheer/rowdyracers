@@ -23,48 +23,64 @@ public class Game {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() + 1,
                 currentPlayer.getGridPosition().getColumnIndex()));
+        changeCurrentPlayer();
+    }
+
+    private void changeCurrentPlayer() {
+        if (currentPlayer == playerRed) {
+            currentPlayer = playerBlue;
+        } else        {
+            currentPlayer = playerRed;
+        }
     }
 
     public void moveToEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex(),
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
+        changeCurrentPlayer();
     }
 
     public void moveToNorth() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() - 1,
                 currentPlayer.getGridPosition().getColumnIndex()));
+        changeCurrentPlayer();
     }
 
     public void moveToWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex(),
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
+        changeCurrentPlayer();
     }
 
     public void moveToNorthWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex()-1,
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
+        changeCurrentPlayer();
     }
 
     public void moveToSouthWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex()+1,
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
+        changeCurrentPlayer();
     }
 
     public void moveToNorthEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex()-1,
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
+        changeCurrentPlayer();
     }
 
     public void moveToSouthEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex()+1,
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
+        changeCurrentPlayer();
     }
 
     private void moveTo(GridPosition gridPositionToMoveTo) {
