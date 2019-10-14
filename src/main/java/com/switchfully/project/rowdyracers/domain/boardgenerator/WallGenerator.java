@@ -25,7 +25,9 @@ public class WallGenerator extends ImpassableGenerator<Wall> {
             }
             List <Wall> tempWalls = calculateTempWall(length, direction, gridPosition);
             if (!wallsInterfereWithOtherThings(tempWalls, grid)) {
-                walls.add((Wall) tempWalls);
+                for (Wall wall:tempWalls) {
+                    walls.add(wall);
+                }
             }
         }
 
