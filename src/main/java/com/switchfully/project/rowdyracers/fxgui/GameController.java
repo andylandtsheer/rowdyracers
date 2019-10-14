@@ -29,6 +29,35 @@ public class GameController {
                     gameModel.moveToEast();
                     gameView.redraw();
                 }, Direction.EAST);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToNorth();
+                    gameView.redraw();
+                }, Direction.NORTH);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToWest();
+                    gameView.redraw();
+                }, Direction.WEST);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToNorthWest();
+                    gameView.redraw();
+                }, Direction.NORTH_WEST);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToNorthEast();
+                    gameView.redraw();
+                }, Direction.NORTH_EAST);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToSouthWest();
+                    gameView.redraw();
+                }, Direction.SOUTH_WEST);
+        gameView.setActionListenerForButtonWithDirection(
+                (event) -> {
+                    gameModel.moveToSouthEast();
+                    gameView.redraw();
+                }, Direction.SOUTH_EAST);
     }
-
 }
