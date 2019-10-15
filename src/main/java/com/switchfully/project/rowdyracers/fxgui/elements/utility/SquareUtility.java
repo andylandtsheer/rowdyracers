@@ -13,4 +13,12 @@ public class SquareUtility {
         return columnIndex * WIDTH_HEIGHT_IN_PX + SPACING_SIZE * columnIndex;
     }
 
+    public static int fromRowIndexToYCoordinateMiddleOfSquare(int rowIndex) {
+        return fromRowIndexToYCoordinate(rowIndex) + WIDTH_HEIGHT_IN_PX/2;
+    }
+
+    public static int fromColumnIndexToXCoordinateMiddleOfSquare(int columnIndex) {
+        return fromColumnIndexToXCoordinate(columnIndex) + WIDTH_HEIGHT_IN_PX/2;
+    }
+
 }

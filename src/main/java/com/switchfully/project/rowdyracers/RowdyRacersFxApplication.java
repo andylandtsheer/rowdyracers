@@ -5,10 +5,7 @@ import com.switchfully.project.rowdyracers.domain.Grid;
 import com.switchfully.project.rowdyracers.domain.Player;
 import com.switchfully.project.rowdyracers.fxgui.GameController;
 import com.switchfully.project.rowdyracers.fxgui.GameView;
-import com.switchfully.project.rowdyracers.fxgui.elements.Drawable;
-import com.switchfully.project.rowdyracers.fxgui.elements.GridGE;
-import com.switchfully.project.rowdyracers.fxgui.elements.PlayerGE;
-import com.switchfully.project.rowdyracers.fxgui.elements.WallGE;
+import com.switchfully.project.rowdyracers.fxgui.elements.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -42,7 +39,9 @@ public class RowdyRacersFxApplication extends Application {
                         new GridGE(gameModel.getGrid()),
                         new PlayerGE(gameModel.getPlayerRed()),
                         new PlayerGE(gameModel.getPlayerBlue()),
-                        new WallGE(gameModel.getWalls())
+                        new WallGE(gameModel.getWalls()),
+                        new LineGE(gameModel.getPlayerRed()),
+                        new LineGE(gameModel.getPlayerBlue()),
                 }
         );
 

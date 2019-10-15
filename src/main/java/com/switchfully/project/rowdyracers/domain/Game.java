@@ -12,6 +12,7 @@ public class Game {
     private final Player playerRed;
     private final Player playerBlue;
     private final List<Wall> walls;
+    private static int turnCounter = 1;
 
     private Player currentPlayer;
 
@@ -32,56 +33,65 @@ public class Game {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() + 1,
                 currentPlayer.getGridPosition().getColumnIndex()));
-        changeCurrentPlayer();
+
+        checkTurn();
     }
 
     public void moveToEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex(),
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToNorth() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() - 1,
                 currentPlayer.getGridPosition().getColumnIndex()));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex(),
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToNorthWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() - 1,
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToSouthWest() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() + 1,
                 currentPlayer.getGridPosition().getColumnIndex() - 1));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToNorthEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() - 1,
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
-        changeCurrentPlayer();
+        checkTurn();
     }
 
     public void moveToSouthEast() {
         moveTo(new GridPosition(
                 currentPlayer.getGridPosition().getRowIndex() + 1,
                 currentPlayer.getGridPosition().getColumnIndex() + 1));
-        changeCurrentPlayer();
+        currentPlayer.addPositionToTrail();
+        checkTurn();
+    }
+
+    private void checkTurn(){
+        if(++turnCounter >=3) {
+            turnCounter  = 0;
+            changeCurrentPlayer();
+        }
     }
 
     private void changeCurrentPlayer() {
